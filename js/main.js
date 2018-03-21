@@ -27,7 +27,7 @@ else if (numb < 100) {
 return numb;
 }
 function changeImg(){
-  vars.main.img[0].src.split("000.jpg")[0] + getImg() + ".jpg"
+  return vars.main.img[0].src.split("000.jpg")[0] + getImg() + ".jpg"
 }
 
 

@@ -8,6 +8,10 @@ var vars = {
         yes: $(".body--button--correct"),
         no: $(".body--button--wrong"),
     },
+    scores:{
+        win:0,
+        lose:0
+    },
     library: 
         {
             "000": "МаНоМетр",
@@ -1011,6 +1015,7 @@ var vars = {
             "998": "РыЦаРь",
             "999": ""
         }
+
 }
 
 
@@ -1039,5 +1044,21 @@ function imgDigitsToPath(digits){
   return vars.main.img[0].src.split("000.jpg")[0] + digits + ".jpg";
 }
 
+function change(){
+    let imageDigits = getImg();
+    console.log(
+    imageDigits,
+    imgDigitsToName(imageDigits),
+    imgDigitsToPath(imageDigits)
+);
+return true;
+}
 
 
+function incScore(a){
+    return vars.scores[a]++;
+};
+
+vars.buttons.no.click( ()=>{ change(); incScore("lose") });
+
+vars.buttons.yes.click( ()=>{ change(); incScore("win") });

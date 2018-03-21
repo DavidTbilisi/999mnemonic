@@ -24,11 +24,13 @@ if (numb < 10) {
 else if (numb < 100) {
     numb = "0"+numb;
 }
-
-return   numb + ".jpg";
+return numb;
 }
-  // vars.main.img[0].src = vars.main.img[0].src.slice(-7)
+function changeImg(){
+  vars.main.img[0].src.split("000.jpg")[0] + getImg() + ".jpg"
+}
 
-//   setInterval(function() {
-//       console.log(getImg());
-//   }, 100) 
+
+
+
+

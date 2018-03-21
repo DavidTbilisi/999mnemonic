@@ -1,0 +1,58 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+@mixin wh($width,$height){
+    width:$width;
+    height:$height;
+}
+
+@mixin p($pos,$top,$left){
+    position: $pos;
+    top:$top;
+    left: $left;
+}
+.body{
+    position: relative;
+    background: greenyellow;
+    color:white;
+    &--red{
+        background: red;
+       @include wh(50%,100%);
+    }
+    &--topline{
+        position: absolute;
+        background: gold;
+        @include wh(100%,10%);
+        top:0;
+        left: 0;
+    }
+    &--main{
+        @include p(absolute,12%,50%);
+        @include wh(70%,75%);
+        transform:translate(-50%);
+        background: indigo;
+    }
+    &--buttons{
+        display: flex;
+        position: absolute;
+        bottom:0;
+        left: 0;
+        background: brown;
+        @include wh(100%,10%);
+        .body--button{
+            box-shadow: 0px 1px 50px -10px rgba(0, 0, 0, 0.46);
+            @include wh(50%,100%);
+           
+            &--wrong{
+            background: red;
+            @extend .body--button;
+            }
+            &--correct{
+            background: greenyellow;
+            @extend .body--button;
+            }
+        }
+    }
+}
+

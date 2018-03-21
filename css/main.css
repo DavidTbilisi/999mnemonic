@@ -1,0 +1,60 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.body {
+  position: relative;
+  background: greenyellow;
+  color: white;
+}
+
+.body--red {
+  background: red;
+  width: 50%;
+  height: 100%;
+}
+
+.body--topline {
+  position: absolute;
+  background: gold;
+  width: 100%;
+  height: 10%;
+  top: 0;
+  left: 0;
+}
+
+.body--main {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  width: 70%;
+  height: 75%;
+  transform: translate(-50%);
+  background: indigo;
+}
+
+.body--buttons {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: brown;
+  width: 100%;
+  height: 10%;
+}
+
+.body--buttons .body--button, .body--buttons .body--button--wrong, .body--buttons .body--button--correct {
+  box-shadow: 0px 1px 50px -10px rgba(0, 0, 0, 0.46);
+  width: 50%;
+  height: 100%;
+}
+
+.body--buttons .body--button--wrong {
+  background: red;
+}
+
+.body--buttons .body--button--correct {
+  background: greenyellow;
+}
+/*# sourceMappingURL=main.css.map */

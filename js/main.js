@@ -9,8 +9,8 @@ var vars = {
         no: $(".body--button--wrong"),
     },
     scores:{
-        win:0,
-        lose:0
+        win:1,
+        lose:1
     },
     library: 
         {
@@ -1044,6 +1044,8 @@ function imgDigitsToPath(digits){
   return vars.main.img[0].src.split("000.jpg")[0] + digits + ".jpg";
 }
 
+
+
 function change(){
     let imageDigits = getImg();
     console.log(
@@ -1054,11 +1056,21 @@ function change(){
 return true;
 }
 
-
 function incScore(a){
     return vars.scores[a]++;
-};
+}
 
-vars.buttons.no.click( ()=>{ change(); incScore("lose") });
+function showScores(a,b){
+    $(vars.buttons[a]).html(b);
+}
 
-vars.buttons.yes.click( ()=>{ change(); incScore("win") });
+function btnCliecked(winlose,yesno){
+    change(); 
+    showScores(yesno, incScore(winlose));
+}
+
+
+
+vars.buttons.no.click( ()=>{ btnCliecked("lose","no") });
+
+vars.buttons.yes.click( ()=>{ btnCliecked("win","yes") });

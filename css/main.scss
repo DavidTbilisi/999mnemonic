@@ -12,6 +12,12 @@ html,body{
     top:$top;
     left: $left;
 }
+
+@mixin center(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .body{
     position: relative;
     background: greenyellow;
@@ -32,6 +38,15 @@ html,body{
         @include wh(70%,75%);
         transform:translate(-50%);
         background: indigo;
+        &-img-cover{
+            @include center();
+            @include wh(100%,100%);
+            font-size: 4rem;
+        }
+        &-img{
+            @include p(absolute,0,0);
+        }
+
     }
     &--buttons{
         display: flex;
@@ -43,9 +58,7 @@ html,body{
         .body--button{
             box-shadow: 0px 1px 50px -10px rgba(0, 0, 0, 0.46);
             @include wh(50%,100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include center();
             font-size: 2rem;
             text-shadow: 1px 1px 10px black;
             &--wrong{

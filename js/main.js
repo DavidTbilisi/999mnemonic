@@ -1046,15 +1046,7 @@ function imgDigitsToPath(digits){
 
 
 
-function change(){
-    let imageDigits = getImg();
-    console.log(
-    imageDigits,
-    imgDigitsToName(imageDigits),
-    imgDigitsToPath(imageDigits)
-);
-return true;
-}
+
 
 function incScore(a){
     return vars.scores[a]++;
@@ -1063,6 +1055,21 @@ function incScore(a){
 function showScores(a,b){
     $(vars.buttons[a]).html(b);
 }
+function showDigits(digits){
+    $(vars.main.cover).html(digits);
+}
+
+function change(){
+    let imageDigits = getImg();
+    console.log(
+    imageDigits,
+    imgDigitsToName(imageDigits),
+    imgDigitsToPath(imageDigits),
+    showDigits(imageDigits)
+);
+return true;
+}
+
 
 function btnCliecked(winlose,yesno){
     change(); 

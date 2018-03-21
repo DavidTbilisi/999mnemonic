@@ -1016,7 +1016,7 @@ var vars = {
             "999": ""
         }
 
-}
+};
 
 
 function getRandomInt(min, max) {
@@ -1025,7 +1025,7 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
   }
 function getImg () {
-let numb = getRandomInt(0,100) ;
+var numb = getRandomInt(0,100) ;
 if (numb < 10) {
     numb = "00"+numb;
 }
@@ -1041,12 +1041,8 @@ function imgDigitsToName(digits) {
 }
 
 function imgDigitsToPath(digits){
-  return vars.main.img[0].src.split("000.jpg")[0] + digits + ".jpg";
+  return vars.main.img[0].src.slice(0,vars.main.img[0].src.length-7) + digits + ".jpg";
 }
-
-
-
-
 
 function incScore(a){
     return vars.scores[a]++;
@@ -1060,13 +1056,19 @@ function showDigits(digits){
 }
 
 function change(){
-    let imageDigits = getImg();
+    var imageDigits = getImg();
     console.log(
     imageDigits,
     imgDigitsToName(imageDigits),
     imgDigitsToPath(imageDigits),
     showDigits(imageDigits)
 );
+
+$(vars.main.img).attr('src',imgDigitsToPath(imageDigits));
+setTimeout(function(){
+    $(vars.main.img).attr('alt',imgDigitsToName(imageDigits));
+},1000);
+
 return true;
 }
 
@@ -1078,6 +1080,6 @@ function btnCliecked(winlose,yesno){
 
 
 
-vars.buttons.no.click( ()=>{ btnCliecked("lose","no") });
+vars.buttons.no.click( function(){ btnCliecked("lose","no"); });
 
-vars.buttons.yes.click( ()=>{ btnCliecked("win","yes") });
+vars.buttons.yes.click( function(){ btnCliecked("win","yes"); });

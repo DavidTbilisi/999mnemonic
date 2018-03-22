@@ -39,12 +39,17 @@ html,body{
         transform:translate(-50%);
         background: indigo;
         &-img-cover{
+            @include p(absolute,0,0);
             @include center();
             @include wh(100%,100%);
             font-size: 4rem;
+            background: red;
+            z-index: 2;
         }
         &-img{
             @include p(absolute,0,0);
+            @include wh(100%,100%);
+            z-index: 1;
         }
 
     }

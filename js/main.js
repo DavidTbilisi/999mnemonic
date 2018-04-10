@@ -1130,10 +1130,10 @@ function change() {
 }
 function redMoves(winlose) {
     if (winlose == "win") {
-        $(vars.scores.red).width($(vars.scores.red).width() + 2);
+        $(vars.scores.red).width($(vars.scores.red).width() - 2);
     }
     else {
-        $(vars.scores.red).width($(vars.scores.red).width() - 2);
+        $(vars.scores.red).width($(vars.scores.red).width() + 2);
     }
 }
 function btnCliecked(winlose, yesno) {

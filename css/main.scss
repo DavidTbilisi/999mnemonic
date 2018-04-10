@@ -28,7 +28,7 @@ html,body{
     }
     &--topline{
         position: absolute;
-        background: gold;
+        background: #fff8d5a1;
         @include wh(100%,10%);
         top:0;
         left: 0;
@@ -43,7 +43,7 @@ html,body{
             @include center();
             @include wh(100%,100%);
             font-size: 4rem;
-            background: red;
+            background: #0a01d8;
             z-index: 2;
         }
         &-img{

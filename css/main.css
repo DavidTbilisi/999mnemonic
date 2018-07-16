@@ -33,6 +33,7 @@ html, body {
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
   background: indigo;
+  font-size: 5rem;
 }
 
 .body--main-img-cover {

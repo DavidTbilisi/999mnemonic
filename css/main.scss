@@ -38,6 +38,7 @@ html,body{
         @include wh(70%,75%);
         transform:translate(-50%);
         background: indigo;
+        font-size: 5rem;
         &-img-cover{
             @include p(absolute,0,0);
             @include center();

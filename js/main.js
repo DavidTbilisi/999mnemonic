@@ -1039,7 +1039,6 @@ function fetchJSONFile(path, callback) {
 
 
 fetchJSONFile('99.json', function(data){
-    
     console.log(data);
 });
 

@@ -21,7 +21,6 @@ var vars = {
     },
     library: {}
 };
-<<<<<<< HEAD
 
 
 $.ajax({
@@ -33,9 +32,6 @@ $.ajax({
 });
 
 
-
-=======
->>>>>>> parent of a5ae233... done
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -52,16 +48,37 @@ function addZeros(numb) {
 }
 
 function getImg() {
-<<<<<<< HEAD
 
-    var numb, 
-    iMin = vars.minMax.minimum,
-    iMax = vars.minMax.maximum;
-var inputMinIsEmpty = iMin.val() === "";
-var inputMaxIsEmpty = iMax.val() === "";
-var localMinIsEmpty = localStorage.minimum == undefined;
-var localMaxIsEmpty = localStorage.maximum == undefined;
-var numb = getRandomInt(vars.minMax.min, vars.minMax.max);
+var numb, 
+iMin = vars.minMax.minimum, 
+iMax = vars.minMax.maximum;
+
+
+let  inputMinIsEmpty = iMin.val() === "";
+let  inputMaxIsEmpty = iMax.val() === "";
+
+let localMinIsEmpty = localStorage.minimum == undefined;
+let localMaxIsEmpty = localStorage.maximum == undefined;
+
+
+// setting min max of inputs;
+if(inputMinIsEmpty && inputMaxIsEmpty) {
+    if ( localMinIsEmpty && localMinIsEmpty){
+        numb = getRandomInt(vars.minMax.min, vars.minMax.max);
+        console.warn('from default parameters');
+    }else{
+        numb = getRandomInt(localStorage.minimum, localStorage.maximum);
+        console.warn('from localStorage');
+        iMin.val(localStorage.minimum);
+        iMax.val(localStorage.maximum);
+    }
+  
+} else{
+    numb = getRandomInt(iMin.val(), iMax.val());
+    localStorage.minimum = iMin.val();
+    localStorage.maximum = iMax.val();
+    console.warn('from inputs');
+}
 
     // 999?
     if (!is99()) {
@@ -78,53 +95,8 @@ var numb = getRandomInt(vars.minMax.min, vars.minMax.max);
         if (numb < 10) {
             numb = "0" + numb;
         }
-=======
-    var numb, 
-        iMin = vars.minMax.minimum, 
-        iMax = vars.minMax.maximum;
 
 
-    let  inputMinIsEmpty = iMin.val() === "";
-    let  inputMaxIsEmpty = iMax.val() === "";
-
-    let localMinIsEmpty = localStorage.minimum == undefined;
-    let localMaxIsEmpty = localStorage.maximum == undefined;
-
-    
-    // console.log('inputMinIsEmpty? - ', inputMinIsEmpty);
-    // console.log('inputMaxIsEmpty? - ', inputMaxIsEmpty);
-
-    // console.log('localMinIsEmpty? - ', localMinIsEmpty);
-    // console.log('localMaxIsEmpty? - ', localMaxIsEmpty);
-
-
-    
-        // setting min max of inputs;
-        if(inputMinIsEmpty && inputMaxIsEmpty) {
-            if ( localMinIsEmpty && localMinIsEmpty){
-                numb = getRandomInt(vars.minMax.min, vars.minMax.max);
-                console.warn('from default parameters');
-            }else{
-                numb = getRandomInt(localStorage.minimum, localStorage.maximum);
-                console.warn('from localStorage');
-                iMin.val(localStorage.minimum);
-                iMax.val(localStorage.maximum);
-            }
-          
-        } else{
-            numb = getRandomInt(iMin.val(), iMax.val());
-            localStorage.minimum = iMin.val();
-            localStorage.maximum = iMax.val();
-            console.warn('from inputs');
-        }
-    // begin from 00 -s 
-    if (numb < 10) {
-        numb = "00" + numb;
-    }
-    else if (numb < 100) {
-        numb = "0" + numb;
->>>>>>> parent of a5ae233... done
-    }
     return numb;
 }
 
@@ -134,16 +106,12 @@ function imgDigitsToName(digits) {
 }
 
 function imgDigitsToPath(digits) {
-<<<<<<< HEAD
     var src = vars.main.img[0].src;
     return src.slice(0, src.length - 7) + digits + ".jpg";
 }
 
 
-=======
-    return vars.main.img[0].src.slice(0, vars.main.img[0].src.length - 7) + digits + ".jpg";
-}
->>>>>>> parent of a5ae233... done
+
 function incScore(a) {
     return vars.scores[a]++;
 }
@@ -158,7 +126,6 @@ function showDigits(digits) {
 
 function change() {
     var imageDigits = getImg();
-<<<<<<< HEAD
 
     console.log(
         imageDigits,
@@ -167,9 +134,6 @@ function change() {
         showDigits(imageDigits)
     );
 
-=======
-    console.log(imageDigits, imgDigitsToName(imageDigits), imgDigitsToPath(imageDigits), showDigits(imageDigits));
->>>>>>> parent of a5ae233... done
     $(vars.main.img).attr('src', imgDigitsToPath(imageDigits));
 
     setTimeout(function () {
@@ -203,19 +167,9 @@ function btnCliecked(winlose, yesno) {
 
 
 // button Events
-<<<<<<< HEAD
-vars.buttons.no.click(function () {
-    btnCliecked("lose", "no");
-});
-vars.buttons.yes.click(function () {
-    btnCliecked("win", "yes");
-});
 
-
-=======
 vars.buttons.no.click(function () { btnCliecked("lose", "no"); });
 vars.buttons.yes.click(function () { btnCliecked("win", "yes"); });
->>>>>>> parent of a5ae233... done
 vars.main.cover.click(function () {
     $(this).hide();
 });

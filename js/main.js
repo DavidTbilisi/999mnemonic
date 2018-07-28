@@ -95,7 +95,7 @@ if(inputMinIsEmpty && inputMaxIsEmpty) {
         if (numb < 10) {
             numb = "0" + numb;
         }
-
+ }
 
     return numb;
 }

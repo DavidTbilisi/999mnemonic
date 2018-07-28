@@ -22,13 +22,21 @@ html, body {
   height: 10%;
   top: 0;
   left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .body--topline--learn {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 50%;
   height: 100%;
   color: #535353;
@@ -41,10 +49,19 @@ html, body {
 
 .body--topline--from-to {
   width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .body--topline--from-to input {
@@ -58,7 +75,8 @@ html, body {
   left: 50%;
   width: 70%;
   height: 75%;
-  transform: translate(-50%);
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
   background: indigo;
 }
 
@@ -66,9 +84,15 @@ html, body {
   position: absolute;
   top: 0;
   left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   height: 100%;
   font-size: 4rem;
@@ -83,9 +107,15 @@ html, body {
   width: 100%;
   height: 100%;
   z-index: 1;
+  font-size: 5rem;
+  display: block;
+  text-align: center;
+  line-height: 100%;
 }
 
 .body--buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: absolute;
   bottom: 0;
@@ -96,12 +126,19 @@ html, body {
 }
 
 .body--buttons .body--button, .body--buttons .body--button--wrong, .body--buttons .body--button--correct {
-  box-shadow: 0px 1px 50px -10px rgba(0, 0, 0, 0.46);
+  -webkit-box-shadow: 0px 1px 50px -10px rgba(0, 0, 0, 0.46);
+          box-shadow: 0px 1px 50px -10px rgba(0, 0, 0, 0.46);
   width: 50%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-size: 2rem;
   text-shadow: 1px 1px 10px black;
 }

@@ -73,6 +73,10 @@ html,body{
             @include p(absolute,0,0);
             @include wh(100%,100%);
             z-index: 1;
+            font-size: 5rem;
+            display: block;
+            text-align: center;
+            line-height: 100%;
         }
 
     }

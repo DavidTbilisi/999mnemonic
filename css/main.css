@@ -150,18 +150,4 @@ html, body {
 .body--buttons .body--button--correct {
   background: greenyellow;
 }
-
-.learn {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.learn img {
-  width: 19%;
-}
-
-.hidden {
-  display: none;
-}
 /*# sourceMappingURL=main.css.map */

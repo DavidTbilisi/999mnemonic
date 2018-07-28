@@ -17,7 +17,7 @@ var vars = {
         lose: 1,
         red: $(".body--red")
     },
-    library: new Object
+    library: {}
 };
 
 
@@ -25,7 +25,7 @@ $.ajax({
     dataType: "json",
     url: 'js/99.json',
     success: function (d) {
-        vars.library = d
+        vars.library = d[0];
     }
 });
 
@@ -38,7 +38,7 @@ function getRandomInt(min, max) {
 }
 
 function is99() {
-    return Object.keys(vars.library[0]).length < 102;
+    return Object.keys(vars.library).length < 102;
 }
 
 function getImg() {
@@ -61,7 +61,7 @@ function getImg() {
 
 
 function imgDigitsToName(digits) {
-    return vars.library[0][digits];
+    return vars.library[digits];
 }
 
 function imgDigitsToPath(digits) {
